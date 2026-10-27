@@ -1,0 +1,33 @@
+# Build directories
+build/
+bin/
+out/
+CMakeFiles/
+CMakeCache.txt
+
+# Executables and compiled objects
+*.exe
+*.obj
+*.o
+*.a
+*.lib
+*.dll
+
+# Database temporary WAL and journal files
+data/*.db-wal
+data/*.db-shm
+data/*.db-journal
+
+# Temporary test scripts
+test_runner.ps1
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# SQLite database files
+data/*.db
+data/*.db-*
+

@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: student-management-backend
+    runtime: docker
+    region: oregon
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: BIND_ADDRESS
+        value: 0.0.0.0
+      - key: DB_PATH
+        value: /app/data/student_management.db
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false
+        # Set to your deployed Vercel domain, e.g.:
+        # value: https://your-app.vercel.app
+
+    # Note for persistent SQLite data on Render:
+    # On Render paid tiers (Starter $7/mo+), uncomment the disk block below
+    # to mount a persistent disk at /app/data.
+    # On the free tier, SQLite persists during active runtime and re-seeds if restarted.
+    # disk:
+    #   name: student-db-data
+    #   mountPath: /app/data
+    #   sizeGB: 1
